@@ -1,8 +1,11 @@
 package com.example.recettecuisine.data.model
 import android.graphics.Bitmap
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "recipes")
 data class Recipe( //Recette
-    val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val title: String,
     val description: String,
     val nbr_peoples: Int, //Number of peoples made for
