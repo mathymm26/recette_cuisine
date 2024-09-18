@@ -6,6 +6,6 @@ import com.example.recettecuisine.data.model.Recipe
 
 class RecipeRepository(private val recipeDao: RecipeDao)
 {
-    fun get_recipes(): LiveData<List<Recipe>> = RecipeDao.getAllRecipes()
-    fun add_recipe(recipe: Recipe) = RecipeDao.insert(recipe)
+    suspend fun get_recipes(): List<Recipe> { return recipeDao.getAllRecipes() }
+    suspend fun add_recipe(recipe: Recipe) { recipeDao.insert(recipe) }
 }

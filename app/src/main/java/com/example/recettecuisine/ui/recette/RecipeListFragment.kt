@@ -25,11 +25,17 @@ class RecipeListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
 
-        viewModel.recipes.observe(viewLifecycleOwner, { recipes ->
-
-        })
+       // val addButton: Button = view.findViewById(R.id.add_recipe_button)
+        //val recipeTitleEditText: EditText = view.findViewById(R.id.recipe_title)
+        /*
+        addButton.setOnClickListener {
+            val title = recipeTitleEditText.text.toString()
+            if (title.isNotEmpty()) {
+                val newRecipe = Recipe(title = title, ingredients = "Example ingredients")
+                recipeViewModel.addRecipe(newRecipe) // Appeler la méthode d'ajout de recette
+            }
+        }*/
     }
 
     override fun onDestroyView() {

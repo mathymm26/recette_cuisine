@@ -3,10 +3,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import android.content.Context
+import androidx.room.TypeConverters
+import com.example.recettecuisine.data.local.dao.Converter
 import com.example.recettecuisine.data.local.dao.RecipeDao
 import com.example.recettecuisine.data.model.Recipe
 
 @Database(entities = [Recipe::class], version = 1)
+@TypeConverters(Converter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun recipeDao(): RecipeDao
