@@ -13,6 +13,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recettecuisine.databinding.ActivityMainBinding
+import com.example.recettecuisine.ui.recette.RecipeListFragment
+import com.example.recettecuisine.ui.recette.StepFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,6 +56,12 @@ class MainActivity : AppCompatActivity() {
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
             it.setupWithNavController(navController)
+        }
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.frame_recipe, StepFragment())
+                .commit()
         }
     }
 

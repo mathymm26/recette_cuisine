@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.example.recettecuisine.R
 import com.example.recettecuisine.databinding.FragmentRecipeListBinding
-import com.example.recettecuisine.viewmodel.RecipeViewModel
 
 class RecipeListFragment : Fragment() {
 
@@ -26,16 +27,16 @@ class RecipeListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // val addButton: Button = view.findViewById(R.id.add_recipe_button)
-        //val recipeTitleEditText: EditText = view.findViewById(R.id.recipe_title)
-        /*
+        val addButton: Button = view.findViewById(R.id.create_recipe_button)
+        val recipeTitleEditText: EditText = view.findViewById(R.id.recipeTitle)
+
         addButton.setOnClickListener {
             val title = recipeTitleEditText.text.toString()
             if (title.isNotEmpty()) {
-                val newRecipe = Recipe(title = title, ingredients = "Example ingredients")
-                recipeViewModel.addRecipe(newRecipe) // Appeler la méthode d'ajout de recette
+                //val newRecipe = Recipe(title = title)
+                //viewModel.addRecipe(newRecipe)
             }
-        }*/
+        }
     }
 
     override fun onDestroyView() {
