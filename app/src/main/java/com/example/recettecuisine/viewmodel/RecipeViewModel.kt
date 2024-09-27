@@ -1,4 +1,4 @@
-package com.example.recettecuisine.ui.recette
+package com.example.recettecuisine.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

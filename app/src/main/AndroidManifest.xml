@@ -13,12 +13,17 @@
         android:theme="@style/Theme.RecetteCuisine"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.recette.RecipeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RecetteCuisine" />
+
+        <activity
+            android:name=".ui.recette.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:resizeableActivity="true"
             android:theme="@style/Theme.RecetteCuisine.NoActionBar"
-            tools:targetApi="24">
+            tools:targetApi="31">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

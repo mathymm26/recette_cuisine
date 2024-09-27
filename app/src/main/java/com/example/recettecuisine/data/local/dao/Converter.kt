@@ -3,6 +3,7 @@ package com.example.recettecuisine.data.local.dao
 import androidx.room.TypeConverter
 import com.example.recettecuisine.data.model.Category
 import com.example.recettecuisine.data.model.Ingredient
+import com.example.recettecuisine.data.model.Season
 import com.example.recettecuisine.data.model.Step
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -53,5 +54,15 @@ class Converter {
     fun toCategoryList(categoriesString: String): List<Category> {
         val type = object : TypeToken<List<Category>>() {}.type
         return Gson().fromJson(categoriesString, type)
+    }
+
+    @TypeConverter
+    fun fromSeason(season: Season): String {
+        return season.name
+    }
+
+    @TypeConverter
+    fun toSeason(season: String): Season {
+        return Season.valueOf(season)
     }
 }
